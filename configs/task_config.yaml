@@ -1,0 +1,40 @@
+camera:
+  device_index: 0
+  width: 1280
+  height: 720
+  exposure: -6
+ai:
+  backend: auto
+  model_path: models/sorter_yolo.onnx
+  input_size: 640
+  confidence_threshold: 0.6
+motion:
+  serial_port: /dev/ttyACM0
+  baudrate: 115200
+  ack_timeout_s: 2.0
+display:
+  fullscreen: false
+  width: 1024
+  height: 600
+mapping_rules:
+  - box_id: 1
+    shape: cube
+    color: red
+    item_name: red_cube
+  - box_id: 2
+    shape: cylinder
+    color: blue
+    item_name: blue_cylinder
+  - box_id: 3
+    shape: prism
+    color: yellow
+    item_name: yellow_prism
+  - box_id: 4
+    qr_payload: BOX-4
+    item_name: qr_target
+  - box_id: 5
+    text: A5
+    item_name: text_a5
+  - box_id: 6
+    defect: stain
+    item_name: stained_item
